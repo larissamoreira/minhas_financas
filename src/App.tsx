@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
+import Routes from './routes';
 
 function App() {
-  return (
-    <div>Minhas financas</div>
-  );
+  return <Routes />;
 }
 
 export default App;
