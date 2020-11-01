@@ -29,15 +29,15 @@ export const CreateUser: React.FC<{}> = () => (
       {({ errors, touched }) => (
         <StyledForm>
           <InputWrapper>
-            <Input id="name" name="name" placeholder="Seu nome" />
+            <Input id="name" name="name" placeholder="Seu nome" type="text" />
             {touched.name && errors.name && <Span>* {errors.name}</Span>}
           </InputWrapper>
           <InputWrapper>
-            <Input id="email" name="email" placeholder="Seu email" />
+            <Input id="email" name="email" placeholder="Seu email" type="email" />
             {touched.email && errors.email && <Span>* {errors.email}</Span>}
           </InputWrapper>
           <InputWrapper>
-            <Input id="password" name="password" placeholder="Sua senha" />
+            <Input id="password" name="password" placeholder="Sua senha" type="password" />
             {touched.password && errors.password && <Span>* {errors.password}</Span>}
           </InputWrapper>
           <Button text="Salvar" type="submit" />
