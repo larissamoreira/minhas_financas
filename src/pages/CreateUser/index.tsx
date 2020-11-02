@@ -1,11 +1,13 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { Input, Button } from '../../components/';
-import './styles';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 import { StyledForm, Container, InputWrapper, Span, Title } from './styles';
 
-interface MyFormValues {
+import './styles';
+
+interface FormValues {
   name: string;
   email: string;
   password: string;
@@ -23,7 +25,7 @@ export const CreateUser: React.FC<{}> = () => (
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
       onSubmit={
-        (values: MyFormValues) => console.log(values)
+        (values: FormValues) => console.log(values)
       }
       validationSchema={SignupSchema}>
       {({ errors, touched }) => (
@@ -40,7 +42,7 @@ export const CreateUser: React.FC<{}> = () => (
             <Input id="password" name="password" placeholder="Sua senha" type="password" />
             {touched.password && errors.password && <Span>* {errors.password}</Span>}
           </InputWrapper>
-          <Button text="Salvar" type="submit" />
+          <Button type="submit"> Salvar </Button>
         </StyledForm>
       )}
     </Formik>

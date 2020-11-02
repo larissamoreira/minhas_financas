@@ -17,13 +17,15 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   margin: 0;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+  text-align: center;
 `
 
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   height: 500px;
+  margin: 0 10px;
 `
 
 export const InputWrapper = styled.div`
