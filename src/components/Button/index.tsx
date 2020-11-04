@@ -5,8 +5,8 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<Props> = ({ children, ...rest }) => (
   <Container type="button" {...rest}>
-    { children }
+    {children}
   </Container>
-)
+);
 
 export default Button;
