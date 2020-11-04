@@ -21,4 +21,8 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+  span {
+    font-size: 11px;
+    color: red;
+  }
 `;
