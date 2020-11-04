@@ -1,10 +1,17 @@
 import React from 'react';
 
-// import './styles';
+import Header from '../../components/Header';
 
-function Dashboard(){
+import { Container } from './styles';
+
+const Dashboard: React.FC = () => {
   return (
-    <h1>Dashboard</h1>
+    <>
+      <Header size="large" />
+      <Container>
+          <h1>Dashboard</h1>
+      </Container>
+    </>
   )
 }
 

@@ -1,10 +1,16 @@
 import React from 'react';
+import Header from '../../components/Header';
 
-// import './styles';
+import {Container} from './styles';
 
-function Login(){
+const Login: React.FC = () => {
   return (
-    <h1>Login</h1>
+    <>
+      <Header size="small" />
+      <Container>
+          <h1>Login</h1>
+      </Container>
+    </>
   )
 }
 
