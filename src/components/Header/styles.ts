@@ -5,7 +5,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-  background: #3CB040;
+  background: #3cb040;
   padding: 30px 0;
 
   header {
