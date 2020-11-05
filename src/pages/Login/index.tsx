@@ -37,7 +37,7 @@ const Login: React.FC = () => {
           validationSchema={LoginSchema}
         >
           {({ errors, touched }) => (
-            <StyledForm>
+            <StyledForm data-testid="form">
               <InputWrapper>
                 <Input
                   id="email"
@@ -58,7 +58,9 @@ const Login: React.FC = () => {
                   <span>*{errors.password}</span>
                 )}
               </InputWrapper>
-              <Button type="submit">Entrar</Button>
+              <Button type="submit" data-testid="submit">
+                Entrar
+              </Button>
             </StyledForm>
           )}
         </Formik>
