@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
-import { StyledForm, Container, InputWrapper, Span, Title } from './styles';
+import { StyledForm, Container, InputWrapper, Title, Subtitle } from './styles';
 
 interface FormValues {
   name: string;
@@ -27,7 +27,8 @@ export const CreateUser: React.FC = () => (
   <>
     <Header size="small" />
     <Container>
-      <Title>Sign up</Title>
+      <Title>Cadastro</Title>
+      <Subtitle>Preencha os dados abaixo para começar.</Subtitle>
       <Formik
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={(values: FormValues) => console.log(values)}
@@ -37,7 +38,7 @@ export const CreateUser: React.FC = () => (
           <StyledForm>
             <InputWrapper>
               <Input id="name" name="name" placeholder="Seu nome" type="text" />
-              {touched.name && errors.name && <Span>*{errors.name}</Span>}
+              {touched.name && errors.name && <span>*{errors.name}</span>}
             </InputWrapper>
             <InputWrapper>
               <Input
@@ -46,7 +47,7 @@ export const CreateUser: React.FC = () => (
                 placeholder="Seu email"
                 type="email"
               />
-              {touched.email && errors.email && <Span>*{errors.email}</Span>}
+              {touched.email && errors.email && <span>*{errors.email}</span>}
             </InputWrapper>
             <InputWrapper>
               <Input
@@ -56,7 +57,7 @@ export const CreateUser: React.FC = () => (
                 type="password"
               />
               {touched.password && errors.password && (
-                <Span>*{errors.password}</Span>
+                <span>*{errors.password}</span>
               )}
             </InputWrapper>
             <Button type="submit">Salvar</Button>
