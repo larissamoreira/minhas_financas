@@ -27,7 +27,6 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   height: 500px;
-  margin: 0 10px;
 `;
 
 export const InputWrapper = styled.div`

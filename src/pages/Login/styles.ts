@@ -17,7 +17,6 @@ export const Title = styled.h1`
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
 `;
 
 export const InputWrapper = styled.div`
