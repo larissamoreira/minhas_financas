@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
-import * as yup from 'yup';
+// import * as yup from 'yup';
 
 import Header from '../../components/Header';
 import Button from '../../components/Button';
