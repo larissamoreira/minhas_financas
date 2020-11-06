@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import income from '../../assets/entradas.svg';
 import outcome from '../../assets/saídas.svg';
 import total from '../../assets/total.svg';
-import Button from '../../components/Button';
 
+import Button from '../../components/Button';
 import Header from '../../components/Header';
 
 import {
@@ -45,9 +45,8 @@ const Dashboard: React.FC = () => {
             <h1 data-testid="balance-total">R$ 2.700,00</h1>
           </Card>
         </CardContainer>
-
         <ButtonContainer>
-          <Link to="/create">
+          <Link to="/createEntry">
             <Button>
               <FiPlus size={18} />
               Adicionar Lançamento
