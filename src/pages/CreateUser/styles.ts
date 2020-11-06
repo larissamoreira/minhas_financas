@@ -15,6 +15,8 @@ export const Container = styled.div`
 export const Title = styled.h1`
   margin: 0;
   text-align: center;
+  font-weight: 500;
+  color: #32264d;
 `;
 
 export const Subtitle = styled.h3`

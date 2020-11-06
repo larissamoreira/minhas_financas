@@ -60,7 +60,7 @@ export const CreateUser: React.FC = () => (
                 <span>*{errors.password}</span>
               )}
             </InputWrapper>
-            <Button type="submit">Salvar</Button>
+            <Button type="submit">Concluir cadastro</Button>
           </StyledForm>
         )}
       </Formik>

@@ -11,6 +11,8 @@ export const Container = styled.div`
 export const Title = styled.h1`
   margin: 0;
   padding-bottom: 30px;
+  font-weight: 500;
+  color: #32264d;
   text-align: center;
 `;
 
@@ -28,4 +30,12 @@ export const InputWrapper = styled.div`
 export const RegisterLink = styled.div`
   margin-top: 15px;
   color: #6a6180;
+  font-weight: 500;
+
+  a {
+    color: #3cb040;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 `;

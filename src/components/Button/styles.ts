@@ -10,7 +10,7 @@ export const Container = styled.button`
   height: 45px;
   border-radius: 10px;
   border: none;
-  color: #312e38;
+  color: #32264d;
   width: 100%;
   font-weight: 500;
   margin-top: 5px;
