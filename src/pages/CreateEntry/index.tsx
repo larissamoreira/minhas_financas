@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 // import * as yup from 'yup';
 
 import Header from '../../components/Header';
@@ -18,13 +19,14 @@ interface FormValues {
 
 const CreateEntry: React.FC = () => {
   const [status, setStatus] = useState('');
+  const { t } = useTranslation('createEntry');
 
   return (
     <>
       <Header size="small" />
       <Container>
-        <Title>Cadastro de Lançamento</Title>
-        <Subtitle>Preencha os dados do seu lançamento.</Subtitle>
+        <Title>{t('titlePage')}</Title>
+        <Subtitle>{t('subtitle')}</Subtitle>
         <Formik
           initialValues={{ title: '', value: 0, date: '', status: '' }}
           onSubmit={(values: FormValues) => console.log(values)}
@@ -35,7 +37,7 @@ const CreateEntry: React.FC = () => {
                 <Input
                   id="title"
                   name="title"
-                  placeholder="Título"
+                  placeholder={t('title')}
                   type="text"
                 />
                 {touched.title && errors.title && <span>*{errors.title}</span>}
@@ -44,7 +46,7 @@ const CreateEntry: React.FC = () => {
                 <Input
                   id="value"
                   name="value"
-                  placeholder="Valor"
+                  placeholder={t('amount')}
                   type="number"
                 />
                 {touched.value && errors.value && <span>*{errors.value}</span>}
@@ -53,7 +55,7 @@ const CreateEntry: React.FC = () => {
                 <Input
                   id="date"
                   name="date"
-                  placeholder="Data do Lançamento"
+                  placeholder={t('date')}
                   type="date"
                 />
                 {touched.date && errors.date && <span>*{errors.date}</span>}
@@ -63,19 +65,19 @@ const CreateEntry: React.FC = () => {
                   id="status"
                   name="status"
                   value={status}
-                  placeholder="Data do Lançamento"
+                  placeholder={t('date')}
                   onChange={e => {
                     setStatus(e.target.value);
                   }}
                   options={[
-                    { value: 'Finzalido', label: 'Finalizado' },
-                    { value: 'Pendente', label: 'Pendente' },
-                    { value: 'Criado', label: 'Criado' },
+                    { value: 'Finalizado', label: t('statusClosed') },
+                    { value: 'Pendente', label: t('statusPending') },
+                    { value: 'Criado', label: t('statusCreated') },
                   ]}
                 />
                 {touched.date && errors.date && <span>*{errors.date}</span>}
               </InputWrapper>
-              <Button type="submit">Concluir cadastro</Button>
+              <Button type="submit">{t('finishRegistration')}</Button>
             </StyledForm>
           )}
         </Formik>

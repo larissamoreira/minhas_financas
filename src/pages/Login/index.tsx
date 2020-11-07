@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import {
   Container,
@@ -20,17 +21,19 @@ interface FormValues {
   password: string;
 }
 
-const LoginSchema = yup.object().shape({
-  email: yup.string().email('Invalid email').required('Email is required'),
-  password: yup.string().required('Password is required'),
-});
-
 const Login: React.FC = () => {
+  const { t } = useTranslation('login');
+
+  const LoginSchema = yup.object().shape({
+    email: yup.string().email(t('invalidEmail')).required(t('emailRequired')),
+    password: yup.string().required(t('passwordRequired')),
+  });
+
   return (
     <>
       <Header size="small" />
       <Container>
-        <Title>Fazer login</Title>
+        <Title>{t('title')}</Title>
         <Formik
           initialValues={{ email: '', password: '' }}
           onSubmit={(values: FormValues) => console.log(values)}
@@ -42,7 +45,7 @@ const Login: React.FC = () => {
                 <Input
                   id="email"
                   name="email"
-                  placeholder="Seu email"
+                  placeholder={t('email')}
                   type="email"
                 />
                 {touched.email && errors.email && <span>*{errors.email}</span>}
@@ -51,7 +54,7 @@ const Login: React.FC = () => {
                 <Input
                   id="password"
                   name="password"
-                  placeholder="Sua senha"
+                  placeholder={t('password')}
                   type="password"
                 />
                 {touched.password && errors.password && (
@@ -59,14 +62,14 @@ const Login: React.FC = () => {
                 )}
               </InputWrapper>
               <Button type="submit" data-testid="submit">
-                Entrar
+                {t('login')}
               </Button>
             </StyledForm>
           )}
         </Formik>
         <RegisterLink>
-          <p>Não tem conta?</p>
-          <Link to="/createUser">Cadastre-se</Link>
+          <p>{t('notRegistered')}</p>
+          <Link to="/createUser">{t('register')}</Link>
         </RegisterLink>
       </Container>
     </>
