@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiEdit, FiPlus, FiTrash } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import income from '../../assets/entradas.svg';
 import outcome from '../../assets/saídas.svg';
@@ -18,6 +19,8 @@ import {
 } from './styles';
 
 const Dashboard: React.FC = () => {
+  const { t } = useTranslation('dashboard');
+
   return (
     <>
       <Header size="large" />
@@ -25,21 +28,21 @@ const Dashboard: React.FC = () => {
         <CardContainer>
           <Card>
             <header>
-              <p>Entradas</p>
+              <p>{t('income')}</p>
               <img src={income} alt="Income" />
             </header>
             <h1 data-testid="balance-income">R$ 3.000,00</h1>
           </Card>
           <Card>
             <header>
-              <p>Saídas</p>
+              <p>{t('outcome')}</p>
               <img src={outcome} alt="Outcome" />
             </header>
             <h1 data-testid="balance-outcome">R$ 300,00</h1>
           </Card>
           <Card total>
             <header>
-              <p>Total</p>
+              <p>{t('total')}</p>
               <img src={total} alt="Total" />
             </header>
             <h1 data-testid="balance-total">R$ 2.700,00</h1>
@@ -49,7 +52,7 @@ const Dashboard: React.FC = () => {
           <Link to="/createEntry">
             <Button>
               <FiPlus size={18} />
-              Adicionar Lançamento
+              {t('updateBalance')}
             </Button>
           </Link>
         </ButtonContainer>
@@ -58,11 +61,11 @@ const Dashboard: React.FC = () => {
           <table>
             <thead>
               <tr>
-                <th>Título</th>
-                <th>Valor</th>
-                <th>Status</th>
-                <th>Data</th>
-                <th>Edit/Delete</th>
+                <th>{t('title')}</th>
+                <th>{t('amount')}</th>
+                <th>{t('status')}</th>
+                <th>{t('date')}</th>
+                <th>{t('editDelete')}</th>
               </tr>
             </thead>
 
